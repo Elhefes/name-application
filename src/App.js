@@ -21,13 +21,25 @@ function App() {
       <p>These are the top-10 male and female names in Solita.</p>
       <Filter setFilter={setFilter} />
       <Total names={names} />
-      {names.sort(alphabetically).map((item, index) =>
-        <Name
-          key={index}
-          name={item.name}
-          amount={item.amount}
-        />
-      )}
+
+      <table>
+        <tbody>
+          <tr>
+            <th>
+              <button>Name⤊</button>
+            </th>
+            <th>
+            <button>Amount⤊</button>
+            </th>
+          </tr>
+          {names.sort(mostPopularFirst).map((item, index) =>
+            <tr key={index}>
+              <td>{item.name}</td>
+              <td>{item.amount}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }
