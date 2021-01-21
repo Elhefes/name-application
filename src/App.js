@@ -1,16 +1,24 @@
 import './App.css';
+import Header from './components/Header'
+import Name from './components/Name'
 import data from './names.json'
 
 function App() {
   const names = data.names
-  for (var i = 0; i < names.length; i++) {
-    console.log(names[i].name)
-  }
+  const biggestAmountFirst = (a, b) => b.amount - a.amount
+
   return (
     <div>
-      <p>Hello World!</p>
+      <Header/>
+      {names.sort(biggestAmountFirst).map((name, index) =>
+        <Name
+          key={index}
+          name={name.name}
+          amount={name.amount}
+        />
+      )}
     </div>
-  );
+  )
 }
 
 export default App;
