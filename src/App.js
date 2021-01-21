@@ -6,13 +6,14 @@ import data from './names.json'
 
 function App() {
   const names = data.names
-  const biggestAmountFirst = (a, b) => b.amount - a.amount
+  const mostPopularFirst = (a, b) => b.amount - a.amount
+  const alphabetically = (a, b) => a.name.localeCompare(b.name)
 
   return (
     <div>
       <Header/>
       <Total names={names}/>
-      {names.sort(biggestAmountFirst).map((name, index) =>
+      {names.sort(alphabetically).map((name, index) =>
         <Name
           key={index}
           name={name.name}
