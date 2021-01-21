@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <h1>Solita Dev Academy 2021 Name application</h1>
+    <h1>Solita Dev Academy 2021 name application</h1>
   );
 }
 

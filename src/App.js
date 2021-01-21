@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header'
+import Total from './components/Total'
 import Name from './components/Name'
 import data from './names.json'
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <div>
       <Header/>
+      <Total names={names}/>
       {names.sort(biggestAmountFirst).map((name, index) =>
         <Name
           key={index}
