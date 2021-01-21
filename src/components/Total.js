@@ -4,7 +4,6 @@ const Total = (props) => {
 
   return (
     <div>
-      <p>These are the top-10 male and female names in Solita.</p>
       <p>There are a total of {totalAmount} people of these names.</p>
     </div>
   );
